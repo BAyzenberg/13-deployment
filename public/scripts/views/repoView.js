@@ -12,9 +12,9 @@
 
   const render = Handlebars.compile($('#repo-template').text());
 
-  repoView.index = function() {
+  repoView.index = function(data) {
     ui();
-
+    repos.all = data;
     $('#about ul').append(
       repos.with('name').map(render)
     );
